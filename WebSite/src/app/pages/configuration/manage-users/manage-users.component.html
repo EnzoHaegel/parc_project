@@ -1,0 +1,50 @@
+<div class="user-list">
+    <h2>Liste des utilisateurs:</h2>
+
+    <div class="search-container">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div style="padding-top:20px" class="search-bar">
+                <mat-form-field appearance="fill">
+                    <mat-label>Rechercher par nom / email ou rôles</mat-label>
+                    <input matInput placeholder="Rechercher" formControlName="search" name="search" (change)="onSubmit()">
+                </mat-form-field>
+            </div>
+            <!-- Button to submit -->
+            <button mat-raised-button matTooltip="Rechercher un utilisateur" color="primary" type="submit" [disabled]="!form.valid" class="search">
+                <mat-icon>search</mat-icon>
+                <span>Rechercher</span>
+            </button>
+            <!-- Button to reset submit value -->
+            <button mat-raised-button matTooltip="Réinitialiser la recherche" color="secondary" type="button" (click)="reset()" class="search">
+                <mat-icon>refresh</mat-icon>
+                <span>Réinitialiser</span>
+            </button>
+        </form>
+    </div>
+
+    <div *ngFor="let user of usersPrinted" class="user">
+        <mat-accordion>
+          <mat-expansion-panel
+            (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false"
+          >
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <img class="profile-picture" [src]="BASE_URL+'/user/profile_picture/'+user.username"/>
+                {{ user.username + ' - ' + user.email}} 
+              </mat-panel-title>
+              <mat-panel-description>
+                {{ user.role }}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!-- A button to delete the user -->
+            <div class="button-right">
+                <button mat-raised-button matTooltip="Supprimer le compte de l'utilisateur" color="warn" (click)="deleteUser(user.username)" class="delete">
+                    <mat-icon>delete</mat-icon>
+                    <span>Supprimer</span>
+                </button>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+    </div>
+</div>

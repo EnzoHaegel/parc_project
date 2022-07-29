@@ -1,0 +1,49 @@
+<mat-expansion-panel
+  (opened)="panelOpenState = true"
+  (closed)="panelOpenState = false"
+>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      <mat-icon class="icon">computer</mat-icon>
+      {{ machine?.system?.name || "Sans nom" }}
+      {{ machine?.system?.model || "Sans nom" }}
+      {{ machine?.system?.os || "Sans nom" }}
+    </mat-panel-title>
+    <mat-panel-description>
+      <mat-chip-list>
+        <mat-chip
+          [class]="randomBool ? 'mat-chip-connected' : 'mat-chip-dc'"
+          selected
+        >
+          {{ randomBool ? 'Connecté' : 'Déconnecté' }}
+        </mat-chip>
+      </mat-chip-list>
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <!-- print informations about machine in a material array, network, system, disks and cpu -->
+  <mat-list>
+    <mat-list-item>
+      <mat-icon mat-list-icon matTooltip="Réseaux">network_wifi</mat-icon>
+      <h4 mat-line matTooltip="Ipv4">{{ machine?.network?.ipv4 || "" }}</h4>
+      <p mat-line matTooltip="Adresse mac">{{ machine?.network?.mac || "" }}</p>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>
+      <mat-icon mat-list-icon matTooltip="Machine">computer</mat-icon>
+      <h4 mat-line matTooltip="Nom de la machine">{{ machine?.system?.name || "" }}</h4>
+      <p mat-line matTooltip="Model de la machine">{{ machine?.system?.model || "" }}</p>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>
+      <mat-icon mat-list-icon matTooltip="Stockage">storage</mat-icon>
+      <h4 mat-line matTooltip="Stockage restant">{{ machine?.disks?.size || "" }}</h4>
+      <p mat-line matTooltip="Type du disque">{{ machine?.disks?.type || "" }}</p>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>
+      <mat-icon mat-list-icon matTooltip="CPU">memory</mat-icon>
+      <h4 mat-line matTooltip="Nombre de coeur">{{ machine?.cpu?.cores || "" }}</h4>
+      <p mat-line matTooltip="Vitesse du processeur">{{ machine?.cpu?.speed || "" }}</p>
+    </mat-list-item>
+  </mat-list>
+</mat-expansion-panel>

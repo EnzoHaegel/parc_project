@@ -1,0 +1,21 @@
+<h2 mat-dialog-title>Voulez vous vraiment supprimer l'utilisateur {{data}} ?</h2>
+<div mat-dialog-content>
+    <p>
+        Cette action est irréversible.
+    </p>
+    <p>
+        Les logs de l'utilisateur ne seront pas supprimés.
+    </p>
+</div>
+<div mat-dialog-actions class="container">
+    <!-- A Button that confirm the deletion in red with trash icon -->
+    <button mat-raised-button matTooltip="Confirmer la suppression" color="warn" [mat-dialog-close]="true" class="delete">
+        <mat-icon>delete</mat-icon>
+        <span>Supprimer</span>
+    </button>
+    <!-- A Button that cancel the deletion in secondary with close icon -->
+    <button mat-raised-button matTooltip="Annuler la suppression du compte" color="secondary" [mat-dialog-close]="false" class="delete">
+        <mat-icon>close</mat-icon>
+        <span>Annuler</span>
+    </button>
+</div>

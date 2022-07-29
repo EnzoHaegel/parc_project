@@ -1,0 +1,481 @@
+@use '@angular/material' as mat;
+
+mat.$theme-ignore-duplication-warnings: true;
+
+@include mat.core();
+
+@import "theme.scss";
+
+$my-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+$my-primary-teal: mat.define-palette($teal-palette, 600);
+$my-light-theme-teal: mat.define-light-theme((
+    color: (
+        primary: $my-primary-teal,
+        accent: $my-accent,
+    )
+));
+$my-dark-theme-teal: mat.define-dark-theme((
+    color: (
+        primary: $my-primary-teal,
+        accent: $my-accent,
+    )
+));
+
+$my-primary-blue-grey: mat.define-palette($blue-grey-palette, 500);
+$my-light-theme-blue-grey: mat.define-light-theme((
+    color: (
+        primary: $my-primary-blue-grey,
+        accent: $my-accent,
+    )
+));
+$my-dark-theme-blue-grey: mat.define-dark-theme((
+    color: (
+        primary: $my-primary-blue-grey,
+        accent: $my-accent,
+    )
+));
+
+$my-primary-amber: mat.define-palette($amber-palette, 900);
+$my-light-theme-amber: mat.define-light-theme((
+    color: (
+        primary: $my-primary-amber,
+        accent: $my-accent,
+    )
+));
+$my-dark-theme-amber: mat.define-dark-theme((
+    color: (
+        primary: $my-primary-amber,
+        accent: $my-accent,
+    )
+));
+
+$my-primary-indigo: mat.define-palette($indigo-palette, 500);
+$my-light-theme-indigo: mat.define-light-theme((
+    color: (
+        primary: $my-primary-indigo,
+        accent: $my-accent,
+    )
+));
+$my-dark-theme-indigo: mat.define-dark-theme((
+    color: (
+        primary: $my-primary-indigo,
+        accent: $my-accent,
+    )
+));
+
+$my-primary-pesto-green: mat.define-palette($pesto-green-palette, 500);
+$my-light-theme-pesto-green: mat.define-light-theme((
+    color: (
+        primary: $my-primary-pesto-green,
+        accent: $my-accent,
+    )
+));
+$my-dark-theme-pesto-green: mat.define-dark-theme((
+    color: (
+        primary: $my-primary-pesto-green,
+        accent: $my-accent,
+    )
+));
+
+$my-primary-green: mat.define-palette($green-palette, 500);
+$my-light-theme-green: mat.define-light-theme((
+    color: (
+        primary: $my-primary-green,
+        accent: $my-accent,
+    )
+));
+$my-dark-theme-green: mat.define-dark-theme((
+    color: (
+        primary: $my-primary-green,
+        accent: $my-accent,
+    )
+));
+
+$my-primary-red: mat.define-palette($red-palette, 600);
+$my-light-theme-red: mat.define-light-theme((
+    color: (
+        primary: $my-primary-red,
+        accent: $my-accent,
+    )
+));
+$my-dark-theme-red: mat.define-dark-theme((
+    color: (
+        primary: $my-primary-red,
+        accent: $my-accent,
+    )
+));
+
+$my-primary-pink: mat.define-palette($pink-palette, 500);
+$my-light-theme-pink: mat.define-light-theme((
+    color: (
+        primary: $my-primary-pink,
+        accent: $my-accent,
+    )
+));
+$my-dark-theme-pink: mat.define-dark-theme((
+    color: (
+        primary: $my-primary-pink,
+        accent: $my-accent,
+    )
+));
+
+$my-primary-purple: mat.define-palette($purple-palette, 500);
+$my-light-theme-purple: mat.define-light-theme((
+    color: (
+        primary: $my-primary-purple,
+        accent: $my-accent,
+    )
+));
+$my-dark-theme-purple: mat.define-dark-theme((
+    color: (
+        primary: $my-primary-purple,
+        accent: $my-accent,
+    )
+));
+
+$my-primary-deep-purple: mat.define-palette($deep-purple-palette, 500);
+$my-light-theme-deep-purple: mat.define-light-theme((
+    color: (
+        primary: $my-primary-deep-purple,
+        accent: $my-accent,
+    )
+));
+$my-dark-theme-deep-purple: mat.define-dark-theme((
+    color: (
+        primary: $my-primary-deep-purple,
+        accent: $my-accent,
+    )
+));
+
+$my-primary-blue: mat.define-palette($blue-palette, 500);
+$my-light-theme-blue: mat.define-light-theme((
+    color: (
+        primary: $my-primary-blue,
+        accent: $my-accent,
+    )
+));
+$my-dark-theme-blue: mat.define-dark-theme((
+    color: (
+        primary: $my-primary-blue,
+        accent: $my-accent,
+    )
+));
+
+$my-primary-light-blue: mat.define-palette($light-blue-palette, 500);
+$my-light-theme-light-blue: mat.define-light-theme((
+    color: (
+        primary: $my-primary-light-blue,
+        accent: $my-accent,
+    )
+));
+$my-dark-theme-light-blue: mat.define-dark-theme((
+    color: (
+        primary: $my-primary-light-blue,
+        accent: $my-accent,
+    )
+));
+
+$my-primary-cyan: mat.define-palette($cyan-palette, 500);
+$my-light-theme-cyan: mat.define-light-theme((
+    color: (
+        primary: $my-primary-cyan,
+        accent: $my-accent,
+    )
+));
+$my-dark-theme-cyan: mat.define-dark-theme((
+    color: (
+        primary: $my-primary-cyan,
+        accent: $my-accent,
+    )
+));
+
+$my-primary-light-green: mat.define-palette($light-green-palette, 500);
+$my-light-theme-light-green: mat.define-light-theme((
+    color: (
+        primary: $my-primary-light-green,
+        accent: $my-accent,
+    )
+));
+$my-dark-theme-light-green: mat.define-dark-theme((
+    color: (
+        primary: $my-primary-light-green,
+        accent: $my-accent,
+    )
+));
+
+$my-primary-lime: mat.define-palette($lime-palette, 500);
+$my-light-theme-lime: mat.define-light-theme((
+    color: (
+        primary: $my-primary-lime,
+        accent: $my-accent,
+    )
+));
+$my-dark-theme-lime: mat.define-dark-theme((
+    color: (
+        primary: $my-primary-lime,
+        accent: $my-accent,
+    )
+));
+
+$my-primary-yellow: mat.define-palette($yellow-palette, 500);
+$my-light-theme-yellow: mat.define-light-theme((
+    color: (
+        primary: $my-primary-yellow,
+        accent: $my-accent,
+    )
+));
+$my-dark-theme-yellow: mat.define-dark-theme((
+    color: (
+        primary: $my-primary-yellow,
+        accent: $my-accent,
+    )
+));
+
+$my-primary-orange: mat.define-palette($orange-palette, 500);
+$my-light-theme-orange: mat.define-light-theme((
+    color: (
+        primary: $my-primary-orange,
+        accent: $my-accent,
+    )
+));
+$my-dark-theme-orange: mat.define-dark-theme((
+    color: (
+        primary: $my-primary-orange,
+        accent: $my-accent,
+    )
+));
+
+$my-primary-deep-orange: mat.define-palette($deep-orange-palette, 500);
+$my-light-theme-deep-orange: mat.define-light-theme((
+    color: (
+        primary: $my-primary-deep-orange,
+        accent: $my-accent,
+    )
+));
+$my-dark-theme-deep-orange: mat.define-dark-theme((
+    color: (
+        primary: $my-primary-deep-orange,
+        accent: $my-accent,
+    )
+));
+
+$my-primary-brown: mat.define-palette($brown-palette, 500);
+$my-light-theme-brown: mat.define-light-theme((
+    color: (
+        primary: $my-primary-brown,
+        accent: $my-accent,
+    )
+));
+$my-dark-theme-brown: mat.define-dark-theme((
+    color: (
+        primary: $my-primary-brown,
+        accent: $my-accent,
+    )
+));
+
+$my-primary-grey: mat.define-palette($grey-palette, 500);
+$my-light-theme-grey: mat.define-light-theme((
+    color: (
+        primary: $my-primary-grey,
+        accent: $my-accent,
+    )
+));
+$my-dark-theme-grey: mat.define-dark-theme((
+    color: (
+        primary: $my-primary-grey,
+        accent: $my-accent,
+    )
+));
+
+
+.light-teal {
+    @include mat.all-component-colors($my-light-theme-teal);
+}
+.dark-teal {
+    @include mat.all-component-themes($my-dark-theme-teal);
+}
+
+.light-blue-grey {
+    @include mat.all-component-colors($my-light-theme-blue-grey);
+}
+.dark-blue-grey {
+    @include mat.all-component-themes($my-dark-theme-blue-grey);
+}
+
+.light-amber {
+    @include mat.all-component-colors($my-light-theme-amber);
+}
+.dark-amber {
+    @include mat.all-component-themes($my-dark-theme-amber);
+}
+
+.light-indigo {
+    @include mat.all-component-colors($my-light-theme-indigo);
+}
+.dark-indigo {
+    @include mat.all-component-themes($my-dark-theme-indigo);
+}
+
+.light-pesto-green {
+    @include mat.all-component-colors($my-light-theme-pesto-green);
+}
+.dark-pesto-green {
+    @include mat.all-component-themes($my-dark-theme-pesto-green);
+}
+
+.light-green {
+    @include mat.all-component-colors($my-light-theme-green);
+}
+.dark-green {
+    @include mat.all-component-themes($my-dark-theme-green);
+}
+
+.light-red {
+    @include mat.all-component-colors($my-light-theme-red);
+}
+.dark-red {
+    @include mat.all-component-themes($my-dark-theme-red);
+}
+
+.light-blue {
+    @include mat.all-component-colors($my-light-theme-blue);
+}
+.dark-blue {
+    @include mat.all-component-themes($my-dark-theme-blue);
+}
+
+.light-light-blue {
+    @include mat.all-component-colors($my-light-theme-light-blue);
+}
+.dark-light-blue {
+    @include mat.all-component-themes($my-dark-theme-light-blue);
+}
+
+.light-cyan {
+    @include mat.all-component-colors($my-light-theme-cyan);
+}
+.dark-cyan {
+    @include mat.all-component-themes($my-dark-theme-cyan);
+}
+
+.light-light-green {
+    @include mat.all-component-colors($my-light-theme-light-green);
+}
+.dark-light-green {
+    @include mat.all-component-themes($my-dark-theme-light-green);
+}
+
+.light-lime {
+    @include mat.all-component-colors($my-light-theme-lime);
+}
+.dark-lime {
+    @include mat.all-component-themes($my-dark-theme-lime);
+}
+
+.light-yellow {
+    @include mat.all-component-colors($my-light-theme-yellow);
+}
+.dark-yellow {
+    @include mat.all-component-themes($my-dark-theme-yellow);
+}
+
+.light-orange {
+    @include mat.all-component-colors($my-light-theme-orange);
+}
+.dark-orange {
+    @include mat.all-component-themes($my-dark-theme-orange);
+}
+
+.light-deep-orange {
+    @include mat.all-component-colors($my-light-theme-deep-orange);
+}
+.dark-deep-orange {
+    @include mat.all-component-themes($my-dark-theme-deep-orange);
+}
+
+.light-brown {
+    @include mat.all-component-colors($my-light-theme-brown);
+}
+.dark-brown {
+    @include mat.all-component-themes($my-dark-theme-brown);
+}
+
+.light-pink {
+    @include mat.all-component-colors($my-light-theme-pink);
+}
+.dark-pink {
+    @include mat.all-component-themes($my-dark-theme-pink);
+}
+
+.light-purple {
+    @include mat.all-component-colors($my-light-theme-purple);
+}
+.dark-purple {
+    @include mat.all-component-themes($my-dark-theme-purple);
+}
+
+.light-deep-purple {
+    @include mat.all-component-colors($my-light-theme-deep-purple);
+}
+.dark-deep-purple {
+    @include mat.all-component-themes($my-dark-theme-deep-purple);
+}
+
+.light-grey {
+    @include mat.all-component-colors($my-light-theme-grey);
+}
+.dark-grey {
+    @include mat.all-component-themes($my-dark-theme-grey);
+}
+
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.container {
+    padding: 5px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+mat-form-field {
+    width: 60%;
+}
+
+@media only screen and (max-width: 800px) {
+    mat-form-field {
+        width: 75%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    mat-form-field {
+        width: 90%;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: none;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgb(100, 100, 100);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    border-radius: 10px;
+    background: rgb(142, 142, 142);
+}

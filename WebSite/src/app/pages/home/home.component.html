@@ -1,0 +1,39 @@
+<!-- button for scriptName in scriptList -->
+<div class="content">
+    <h2>Liste des scripts disponible:</h2>
+    <div fxLayout="row wrap" fxLayoutGap="16px grid">
+        <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let scriptName of scriptList">
+            <mat-card [class]="(isAdmin ? ' admin-edit ' : '') + 'mat-elevation-z4'">
+                <mat-card-title>
+                    {{scriptName}}
+                    <mat-icon class="edit-icon">edit</mat-icon>
+                </mat-card-title>
+                <mat-card-subtitle>
+                    Ce script permet de Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+                    molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+                    numquam</mat-card-subtitle>
+                <mat-card-actions>
+                    <button mat-raised-button color="primary" [matTooltip]="'Lancer le script ' + scriptName" (click)="executeScript(scriptName)">Exécuter</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</div>
+
+<div class="console">
+    <div class="console-header">
+        <div class="console-header-title">
+            Console
+        </div>
+        <div class="console-header-buttons">
+            <button matTooltip="Effacer la console" mat-icon-button (click)="clearConsole()">
+                <mat-icon>clear</mat-icon>
+            </button>
+        </div>
+    </div>
+    <div class="console-content">
+        <div *ngFor="let lines of stdout" class="console-content-text">
+            {{lines}}
+        </div>
+    </div>
+</div>

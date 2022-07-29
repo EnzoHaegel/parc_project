@@ -1,0 +1,128 @@
+<h2 mat-dialog-title>
+  Changez votre photo de profile
+  <button
+    mat-raised-button
+    matTooltip="Fermer la fenêtre"
+    color="secondary"
+    [mat-dialog-close]="false"
+    class="close"
+  >
+    <mat-icon>close</mat-icon>
+  </button>
+</h2>
+<div mat-dialog-content></div>
+<div mat-dialog-actions class="container">
+  <div
+    ng2FileDrop
+    [uploader]="uploader"
+    [ngClass]="{ 'nv-file-over': hasBaseDropZoneOver }"
+    (fileOver)="fileOverBase($event)"
+    [class]="'drop-files ' + returnLightOrDark()"
+    accept="image/x-png,image/gif,image/jpeg"
+  >
+    <input
+      class="input-files"
+      type="file"
+      name="photo"
+      ng2FileSelect
+      [uploader]="uploader"
+      accept="image/x-png,image/gif,image/jpeg"
+    />
+    <div class="nv-file-drop-btn little-margin">
+      <div class="nv-file-icon">
+        <i class="material-icons">file_upload</i>
+      </div>
+      <div class="nv-file-text">
+        <span>Déposez votre image ici</span>
+      </div>
+    </div>
+  </div>
+
+  <p>Images sélectionnés: {{ uploader?.queue?.length }}</p>
+
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th width="50%">Nom de l'image</th>
+          <th>Taille de l'image</th>
+          <th>Progrès</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of uploader.queue">
+          <td>
+            <strong>{{ item?.file?.name }}</strong>
+          </td>
+          <td *ngIf="uploader.options.isHTML5" nowrap>
+            {{ item?.file?.size / 1024 / 1024 | number: ".2" }} MB
+          </td>
+          <td *ngIf="uploader.options.isHTML5">
+            <div class="progress" style="margin-bottom: 0">
+              <div
+                class="progress-bar"
+                role="progressbar"
+                [ngStyle]="{ width: item.progress + '%' }"
+                [attr.aria-valuenow]="item.progress"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                {{ item.progress }}%
+              </div>
+            </div>
+          </td>
+          <td class="text-center">
+            <span *ngIf="item.isSuccess"
+              ><i class="glyphicon glyphicon-ok"></i
+            ></span>
+            <span *ngIf="item.isCancel"
+              ><i class="glyphicon glyphicon-ban-circle"></i
+            ></span>
+            <span *ngIf="item.isError"
+              ><i class="glyphicon glyphicon-remove"></i
+            ></span>
+          </td>
+
+          <div>
+            <td nowrap>
+              <button
+                mat-raised-button
+                color="primary"
+                type="button"
+                class="btn btn-success btn-xs little-margin"
+                (click)="item.upload()"
+                [disabled]="item.isReady || item.isUploading || item.isSuccess"
+              >
+                Upload
+                <mat-icon>file_upload</mat-icon>
+              </button>
+              <button
+                mat-raised-button
+                color="warn"
+                type="button"
+                class="btn btn-warning btn-xs little-margin"
+                (click)="item.cancel()"
+                [disabled]="!item.isUploading"
+              >
+                Cancel
+                <mat-icon>cancel</mat-icon>
+              </button>
+              <button
+                mat-raised-button
+                color="warn"
+                type="button"
+                class="btn btn-danger btn-xs little-margin"
+                (click)="item.remove()"
+              >
+                Remove
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </div>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

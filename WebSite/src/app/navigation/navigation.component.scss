@@ -1,0 +1,109 @@
+.sidenav-container {
+  height: 100%;
+}
+
+// put element full right 64px height
+.logo-position {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 64px;
+
+  
+  .logo {
+    height: 64px;
+    width: 199px;
+    margin: auto;
+  }
+}
+
+.dark-mode-toggle {
+  float: right;
+  height: 64px;
+  font-size: 14px;
+  margin-left: 20px;
+
+  .icon-text {
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.sidenav {
+  width: 200px;
+
+  .avatar {
+    border-radius: 50%;
+    color: #000;
+    display: flex;
+    font-size: 2.5rem;
+    font-weight: 700;
+    height: 75px;
+    width: 75px;
+    justify-content: center;
+    line-height: 1;
+    margin: auto;
+    margin-top: 5px;
+    text-align: center;
+    align-items: center;
+    vertical-align: middle;
+    cursor: pointer;
+
+    &:hover mat-icon {
+      display: block;
+      position: absolute;
+      left: 100px;
+      top: 50px;
+      color: #fff;
+      transition: 0.5s ease-in-out;
+      border-radius: 50%;
+      padding: 3px;
+      background-color: rgba(91, 91, 91, 0.5);
+    }
+
+    mat-icon{
+      display: none;
+    }
+    
+    .profile-picture {
+      height: 75px;
+      width: 75px;
+      margin: auto;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      cursor: pointer;
+    }
+  }
+
+  .username {
+    text-align: center;
+    align-items: center;
+    vertical-align: middle;
+    font-size: 18px;
+  }
+}
+
+.list-pages {
+  margin-left: 10px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+// if width of page is lower than 600px
+@media only screen and (max-width: 600px) {
+  .logo-position {
+    .logo {
+      height: 0;
+      width: 0;
+    }
+  }
+}

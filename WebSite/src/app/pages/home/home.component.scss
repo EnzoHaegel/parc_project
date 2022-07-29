@@ -1,0 +1,92 @@
+// center button and padding + margin
+.script-card {
+    margin: 10px;
+    // width: calc(100% - 20px);
+    // // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+}
+
+.content {
+    padding: 16px;
+}
+
+.content > mat-card {
+    width: 200px;
+
+}
+
+.admin-edit {
+    // add cursor pointer and border animation when hovering
+    &:hover {
+        // add a shadow to the card
+        box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+        cursor: pointer;
+        transition: 0.3s ease;
+        transform: scale(1.03);
+    }
+
+    &:hover mat-icon {
+        display: block;
+        transition: 0.5s ease-in-out;
+    }
+
+}
+
+.edit-icon {
+    display: none;
+    float: right;
+}
+
+.console {
+    display: block;
+    margin: 10px;
+    width: calc(100% - 22px);
+    background-color: rgb(36, 36, 36);
+    border: 2px solid #4b4b4b;
+    border-radius: 10px;
+    color: white;
+
+    .console-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px;
+        width: calc(100% - 20px);
+
+        .console-title {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+            width: calc(100% - 20px);
+        }
+
+        .console-title-text {
+            margin: 10px;
+            width: calc(100% - 20px);
+        }
+
+        .console-title-button {
+            margin: 10px;
+            width: calc(100% - 20px);
+        }
+    }
+
+    .console-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+        width: calc(100% - 20px);
+
+        .console-content-text {
+            margin: 0px;
+            width: calc(100% - 20px);
+        }
+    }
+}

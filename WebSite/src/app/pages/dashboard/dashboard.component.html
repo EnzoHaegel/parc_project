@@ -1,0 +1,62 @@
+<!--dash.component.html-->
+<div class="grid-container">
+  <h1 class="mat-h1">Dashboard</h1>
+  <mat-grid-list cols="{{ (cardLayout | async)?.columns }}" rowHeight="200px">
+    <!--Mini Cards-->
+    <mat-grid-tile
+      *ngFor="let i of [1, 2, 3]"
+      [colspan]="((cardLayout | async)?.miniCard)!.cols"
+      [rowspan]="((cardLayout | async)?.miniCard)!.rows"
+    >
+      <app-card title="Card {{ i }}"
+        >
+        <!-- Print machine length -->
+        <div class="card-content">
+          <div class="card-content-text">
+            <mat-icon class="card-content-icon">computer</mat-icon>
+            <p>{{ machine?.length + ' Devices' }}</p>
+          </div>
+        </div>
+      </app-card
+      >
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <app-card title="Card 4">
+        <div class="chart-wrapper">
+          <canvas baseChart
+            [data]="pieChartData"
+            [labels]="pieChartLabels"
+            [chartType]="pieChartType"
+            [options]="pieChartOptions"
+            [plugins]="pieChartPlugins"
+            [legend]="pieChartLegend">
+          </canvas>
+        </div>
+      </app-card>
+    </mat-grid-tile>
+    <!--Charts-->
+    <mat-grid-tile
+      *ngFor="let i of [5, 6, 7, 8]"
+      [colspan]="((cardLayout | async)?.chart)!.cols"
+      [rowspan]="((cardLayout | async)?.chart)!.rows"
+    >
+      <app-card title="Card {{ i }}">
+        <div class="chart-wrapper">
+          <canvas baseChart
+          [data]="pieChartData"
+          [labels]="pieChartLabels"
+          [chartType]="pieChartType"
+          [options]="pieChartOptions"
+          [plugins]="pieChartPlugins"
+          [legend]="pieChartLegend"
+          [colors]="pieChartColors">
+        </canvas>
+      </div>
+      </app-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+    <!-- ng for this.machine call app-machines-list -->
+  <div *ngFor="let machin of machine" class="machine-list">
+    <app-machines-list [machine]="machin"></app-machines-list>
+  </div>
+</div>

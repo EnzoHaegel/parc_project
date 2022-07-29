@@ -1,0 +1,16 @@
+$green-color: #00b894;
+$warn-color: #ff7675;
+
+.mat-chip-connected {
+    margin: 0 5px;
+    background-color: $green-color !important;;
+}
+
+.mat-chip-dc {
+    margin: 0 5px;
+    background-color: $warn-color !important;;
+}
+
+.icon {
+    margin-right: 10px;
+}

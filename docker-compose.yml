@@ -1,0 +1,19 @@
+version: '3.3'
+
+services:
+  server:
+    container_name: server-back
+    build:
+      dockerfile: Dockerfile
+      context: "./Api"
+    restart: always
+    ports:
+    - "4000:4000"
+  
+  client:
+    container_name: client-front
+    build:
+      dockerfile: Dockerfile
+      context: "./WebSite"
+    ports:
+      - '4200:80'

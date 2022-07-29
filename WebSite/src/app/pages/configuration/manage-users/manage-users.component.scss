@@ -1,0 +1,35 @@
+.user-list {
+    margin: 10px;
+    width: calc(100% - 20px);
+
+    .user {
+        margin: 2px 0px;
+
+        .button-right {
+            float: right;
+            margin-left: auto;
+        }
+
+        .profile-picture {
+            border-radius: 50%;
+            height: 32px;
+            width: 32px;
+            margin-right: 10px;
+        }
+    }
+
+    .search-container {
+        place-items: center;
+        justify-content: center;
+        align-items: center;
+
+        .search {
+            margin: auto;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+            margin-right: 10px;
+        }
+    }
+}

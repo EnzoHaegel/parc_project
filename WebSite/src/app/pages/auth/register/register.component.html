@@ -1,0 +1,51 @@
+<h1 class="mat-h1" style="margin:20px">S'enregistrer</h1>
+<form [formGroup]="form">
+    <div class="container" style="padding-top:40px">
+        <mat-form-field appearance="fill">
+            <mat-label>Rentrez votre nom d'utilisateur</mat-label>
+            <input matInput placeholder="username" formControlName="username" name="username" required>
+            <mat-error *ngIf="!this.form.valid">Ce champ est obligatoire</mat-error>
+        </mat-form-field>
+    </div>
+
+    <div class="container">
+        <mat-form-field appearance="fill">
+            <mat-label>Rentrez votre email</mat-label>
+            <input matInput placeholder="email@example.com" formControlName="email" name="email" required>
+            <mat-error *ngIf="!this.form.valid">Veuillez rentrer un email valide</mat-error>
+        </mat-form-field>
+    </div>
+
+    <div class="container">
+        <mat-form-field appearance="fill">
+            <mat-label>Rentrez votre mot de passe</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" name="password" required>
+            <mat-error *ngIf="!this.form.valid">Veuillez rentrer un mot de passe de 8 caractères minimum</mat-error>
+            <button mat-icon-button matSuffix matTooltip="Montrer ou cacher le mot de passe" (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+    </div>
+
+    <div class="container" style="padding-top:20px">
+        <section>
+            <div class="example-button-row">
+                <div *ngIf="!this.form.valid">
+                    <button mat-raised-button disabled>S'enregistrer</button>
+                </div>
+                <div *ngIf="this.form.valid">
+                    <button mat-raised-button color="primary" (click)="onSubmit()">S'enregistrer</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="container">
+        <section>
+            <div class="example-button-row">
+                <button mat-stroked-button color="primary" (click)="goToLogin()">J'ai déjà un compte</button>
+            </div>
+        </section>
+    </div>
+</form>

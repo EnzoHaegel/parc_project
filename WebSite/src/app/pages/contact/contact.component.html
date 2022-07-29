@@ -1,0 +1,33 @@
+<!-- A contact page -->
+<div class="container">
+    <h2>Nous Contacter</h2>
+    <h3>Si vous avez remarqué un problème, ou que vous avec une idée d'amélioration, n'hésitez pas à envoyer un message</h3>
+    <div>
+        <div class="form-container">
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <mat-form-field appearance="fill" class="input-form">
+                    <mat-label>Rentrez votre nom</mat-label>
+                    <input matInput placeholder="name" formControlName="name" name="name" required>
+                    <mat-error *ngIf="!this.form.valid">Ce champ est obligatoire</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" class="input-form">
+                    <mat-label>Rentrez votre email</mat-label>
+                    <input matInput placeholder="email@example.com" formControlName="email" name="email" required>
+                    <mat-error *ngIf="!this.form.valid">Veuillez rentrer un email valide</mat-error>
+                </mat-form-field>
+
+                <!-- Material textarea -->
+                <mat-form-field appearance="fill" class="input-form">
+                    <mat-label>Rentrez votre message</mat-label>
+                    <textarea matInput placeholder="Votre message" formControlName="message" name="message" required></textarea>
+                    <mat-error *ngIf="!this.form.valid">Ce champ est obligatoire</mat-error>
+                </mat-form-field>
+
+                <!-- Submit material button -->
+                <button mat-raised-button color="primary" [disabled]="!this.form.valid">Envoyer</button>
+            </form>
+        </div>
+    </div>
+</div>
+    
